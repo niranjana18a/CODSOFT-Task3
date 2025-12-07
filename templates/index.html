@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Captioning AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>🧠 Image Caption Generator</h2>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Generate Caption</button>
+    </form>
+
+    {% if image %}
+        <div class="output">
+            <img src="{{ image }}" width="300">
+            <p><strong>Caption:</strong> {{ result }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
